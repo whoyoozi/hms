@@ -1,0 +1,275 @@
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: Arial black;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    color: #fff;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    justify-content: center;
+    padding: 3px;
+    background: rgb(44, 97, 196); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 20px;
+}
+header a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    background-color: hsla(0, 0%, 100%, 0.432);
+    padding: 20px 30px;
+    margin: 0 100px;
+    border: 0px solid #ccc;
+    border-radius: 200px;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.521);
+    color: #ffffff;
+    border-color: hsla(0, 0%, 100%, 0);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #fafafa;
+}
+main {
+    padding: 2rem;
+    background-color: #fff;
+    display: flex; /* Usamos Flexbox para organizar los elementos en fila */
+    justify-content: space-between; 
+    gap: 30px;
+}
+.main-container{
+    padding-bottom: 250px;
+    width: 100%; 
+}
+
+.parent-container {
+    display: flex; 
+    align-items: top; 
+    justify-content: space-between; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile {
+    flex: 1;
+    padding-right: 20px; 
+    padding-right: 20px;
+    padding-left: 100px;
+}
+/* Sección de Perfil */
+.profile h1 {
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 20px;
+    line-height: 28px;
+}
+.carousel-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: auto;
+    padding: 5px 400px;
+    margin-bottom: 100px; /* Espacio en la parte superior del carrusel */
+}
+
+.carousel-container {
+    position: relative;
+    width: 400px; 
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-slides {
+    display: flex;
+    width: auto;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 1 0 100%; /* Cada imagen ocupa el 100% del ancho */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    display: none; 
+}
+
+
+input#slide1:checked ~ .carousel-slides {
+    transform: translateX(0%);
+}
+
+input#slide2:checked ~ .carousel-slides {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .carousel-slides {
+    transform: translateX(-200%);
+}
+
+/* Botones redondos */
+.carousel-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-controls label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-controls label:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+input[type="radio"]:checked + label {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* Contenedor principal */
+.parent-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor con opacidad y bordes redondeados */
+.container {
+    background-color: rgba(255, 255, 255, 0.219); /* Fondo blanco con opacidad */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 30px; /* Espacio interno */
+    width: 70%; /* Ajusta el tamaño del contenedor */
+    max-width: 1200px; /* Establece un tamaño máximo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 0 auto; /* Centra el contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: block; /* Asegura que no herede flexbox interno */
+}
+
+/* Sección de Álbumes con Grid */
+.albums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas */
+    gap: 50px; /* Espacio entre las celdas */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+    padding: 0; /* Elimina el padding interno */
+    margin-bottom: 30px; /* Espacio en la parte inferior entre los álbumes y el carrusel */
+}
+/* Estilos para cada álbum */
+.album {
+    text-align: center; /* Centra el texto en cada álbum */
+}
+.albums a {
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Mantiene el color del texto actual */
+}
+
+.albums a:visited {
+    color: inherit; /* Mantiene el mismo color después de visitar el enlace */
+}
+
+/* Estilo para las imágenes de los álbumes */
+.album img {
+    width: 100%;
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de las imágenes */
+    transition: transform 0.3s ease; /* Efecto de escala al pasar el mouse */
+}
+
+.album img:hover {
+    transform: scale(1.05); /* Aumento de tamaño al hacer hover */
+}
+
+/* Título de cada álbum */
+.album h3 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  .social-buttons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .social-buttons img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+/* Footer */
+footer {
+    background-color: hsla(214, 56%, 91%, 0.445);
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    margin: 0 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
